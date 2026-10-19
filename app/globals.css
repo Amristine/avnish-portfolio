@@ -857,7 +857,6 @@ main, section, header, footer { min-width: 0; max-width: 100%; }
 @media (min-width: 761px) {
   .portfolio-wordmark {
     letter-spacing: -.025em !important;
-    font-stretch: condensed;
     transform: translate(-50%, -50%);
   }
 }

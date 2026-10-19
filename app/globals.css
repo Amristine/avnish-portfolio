@@ -1152,3 +1152,19 @@ a.contact-detail:hover { color: var(--ink); }
     letter-spacing: 0.01em !important;
   }
 }
+
+
+/* Mobile: layer AVNISH behind the portrait for the same editorial overlap */
+@media (max-width: 760px) {
+  .portfolio-wordmark {
+    z-index: 1 !important;
+    top: 18% !important;
+  }
+  .portfolio-portrait {
+    z-index: 2 !important;
+  }
+  .portfolio-portrait img {
+    position: relative;
+    z-index: 2;
+  }
+}

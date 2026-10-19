@@ -1204,3 +1204,16 @@ a.contact-detail:hover { color: var(--ink); }
     letter-spacing: 0.005em !important;
   }
 }
+
+
+/* Raise the portrait slightly in the mobile hero */
+@media (max-width: 760px) {
+  .portfolio-portrait img {
+    transform: translateY(-22px) !important;
+  }
+}
+@media (max-width: 390px) {
+  .portfolio-portrait img {
+    transform: translateY(-18px) !important;
+  }
+}

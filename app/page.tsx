@@ -71,23 +71,23 @@ export default function Home() {
         </motion.nav>}
       </AnimatePresence>
 
-      <section className="hero dark" id="home">
-        <div className="hero-image" role="img" aria-label="Cinematic city skyline at golden hour" />
-        <div className="hero-gradient" />
-        <div className="hero-content">
-          <motion.p className="eyebrow" initial={reduceMotion?false:{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:.6}}>Cinematic editing · Color grading · Storytelling</motion.p>
-          <motion.h1 className="hero-title" initial={reduceMotion?false:{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8,delay:.1}}>
-            EVERY FRAME.<br />A FEELING.
-          </motion.h1>
-          <motion.p className="hero-script" initial={reduceMotion?false:{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:.8,delay:.24}}>Every story, a world.</motion.p>
-          <motion.p className="hero-copy" initial={reduceMotion?false:{opacity:0}} animate={{opacity:1}} transition={{duration:.8,delay:.4}}>Cinematic editing and color grading for<br className="desktop-only" /> brands, creators, and stories that deserve to be seen.</motion.p>
-          <div className="hero-actions">
-            <a className="btn btn-paper" href="#showreel"><Play size={13} fill="currentColor" /> Watch showreel</a>
-            <a className="text-link light-link" href="#work">View my work <ArrowRight size={14}/></a>
-          </div>
+      <section className="hero dark portfolio-hero" id="home">
+        <div className="portfolio-hero-top">
+          <span>INDEPENDENT VIDEO EDITOR</span>
+          <span className="hero-status"><i /> AVAILABLE FOR PROJECTS</span>
         </div>
-        <div className="hero-bottom"><a href="#work" className="scroll-cue"><span className="scroll-line" /> Scroll to explore <ArrowDownRight size={13}/></a><span className="eyebrow">Available for projects worldwide</span></div>
-        <span className="hero-index">01 / 05</span>
+        <div className="portfolio-wordmark" aria-hidden="true">PORTFOLIO</div>
+        <div className="portfolio-portrait">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1100&q=90" alt="Portrait representing the video editor" />
+        </div>
+        <div className="portfolio-hero-copy">
+          <p className="eyebrow">VIDEO EDITOR &amp; COLORIST</p>
+          <h1>Stories shaped<br />through <em>motion.</em></h1>
+          <p>I turn raw footage into clear, cinematic stories with thoughtful editing and color.</p>
+          <a className="btn btn-paper" href="#work">Explore selected work <ArrowRight size={14}/></a>
+        </div>
+        <div className="portfolio-hero-side">EDITING / COLOR / STORY</div>
+        <div className="portfolio-hero-bottom"><span>BASED IN INDIA · AVAILABLE WORLDWIDE</span><a href="#work">SCROLL TO EXPLORE <ArrowDownRight size={13}/></a></div>
       </section>
 
       <section className="work-section section-pad" id="work">

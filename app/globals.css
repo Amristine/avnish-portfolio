@@ -995,3 +995,9 @@ a.contact-detail:hover { color: var(--ink); }
   .video-project-grid { grid-template-columns: minmax(0, 1fr); }
   .video-project-player { max-width: min(100%, 340px); }
 }
+
+
+/* Remove the vertical hero side label */
+.portfolio-hero .portfolio-hero-side {
+  display: none !important;
+}

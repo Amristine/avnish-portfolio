@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useState, type FormEvent } from "react";
+import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Aperture, Check, Clapperboard,
   Menu, Play, Scissors, X, Layers3, Mail, MapPin, Instagram,
@@ -35,7 +35,7 @@ const projects = [
   },
 ];
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
@@ -47,7 +47,7 @@ export default function Home() {
   const [formSent, setFormSent] = useState(false);
   const reduceMotion = useReducedMotion();
 
-  function submitInquiry(event: React.FormEvent<HTMLFormElement>) {
+  function submitInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setFormSent(true);
   }

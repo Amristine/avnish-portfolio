@@ -1189,3 +1189,18 @@ a.contact-detail:hover { color: var(--ink); }
     letter-spacing: -0.025em !important;
   }
 }
+
+
+/* Mobile hero: move the wordmark down toward the shoulders and open up the lettering */
+@media (max-width: 760px) {
+  .portfolio-wordmark {
+    top: 31% !important;
+    letter-spacing: 0.015em !important;
+  }
+}
+@media (max-width: 390px) {
+  .portfolio-wordmark {
+    top: 31% !important;
+    letter-spacing: 0.005em !important;
+  }
+}

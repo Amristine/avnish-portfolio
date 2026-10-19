@@ -146,7 +146,7 @@ export default function Home() {
             <p className="body-copy">Tell me a little about what you&apos;re creating. I&apos;d love to hear the idea and how I can help bring it to the screen.</p>
             <a className="contact-detail" href="mailto:hello@framestudio.com"><Mail size={15}/> hello@framestudio.com <ArrowUpRight size={13}/></a>
             <div className="contact-detail"><MapPin size={15}/> Available worldwide</div>
-            <div className="social-links"><a href="https://instagram.com" aria-label="Instagram"><Instagram size={17}/></a><a href="https://youtube.com" aria-label="YouTube"><Youtube size={18}/></a><a href="https://linkedin.com" aria-label="LinkedIn"><Linkedin size={17}/></a></div>
+            <div className="social-links"><a href="https://instagram.com" aria-label="Instagram"><Instagram size={17}/></a></div>
           </div>
 
         </div>

@@ -4,8 +4,8 @@ import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Aperture, Check, Clapperboard,
-  Menu, Play, Scissors, X, Layers3, Mail, MapPin, Instagram,
-  Youtube, Linkedin, MoveHorizontal
+  Menu, Scissors, X, Layers3, Mail, MapPin, Instagram,
+  Youtube, Linkedin
 } from "lucide-react";
 
 const projects = [
@@ -26,7 +26,6 @@ const fadeUp: Variants = {
 
 export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [grade, setGrade] = useState(50);
   const [formSent, setFormSent] = useState(false);
   const reduceMotion = useReducedMotion();
 

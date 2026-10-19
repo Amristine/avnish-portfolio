@@ -78,7 +78,7 @@ export default function Home() {
         </div>
         <div className="portfolio-wordmark" aria-hidden="true">AVNISH</div>
         <div className="portfolio-portrait">
-          <img src="/portrait1.png" alt="Portrait of Avnish Yadav" />
+          <img src="/portrait3.png" alt="Portrait of Avnish Yadav" />
         </div>
         <div className="portfolio-hero-copy">
           <p className="eyebrow">VIDEO EDITOR &amp; COLORIST</p>

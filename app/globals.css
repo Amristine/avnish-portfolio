@@ -1168,3 +1168,11 @@ a.contact-detail:hover { color: var(--ink); }
     z-index: 2;
   }
 }
+
+
+/* Lower the AVNISH wordmark slightly on mobile */
+@media (max-width: 760px) {
+  .portfolio-wordmark {
+    top: 23% !important;
+  }
+}

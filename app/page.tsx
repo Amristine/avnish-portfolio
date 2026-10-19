@@ -60,14 +60,14 @@ export default function Home() {
           <span className="brand-sub">VIDEO EDITOR<br />& COLORIST</span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+          <a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a>
         </nav>
-        <a className="nav-cta" href="#contact">Let&apos;s talk <ArrowUpRight size={13} /></a>
+        <a className="nav-cta" href="#work">Explore work <ArrowUpRight size={13} /></a>
         <button className="menu-toggle" onClick={() => setMobileMenu(!mobileMenu)} aria-label={mobileMenu ? "Close menu" : "Open menu"}>{mobileMenu ? <X /> : <Menu />}</button>
       </header>
       <AnimatePresence>
         {mobileMenu && <motion.nav className="mobile-nav" initial={{opacity:0,y:-8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-8}}>
-          {["Work","About","Services","Contact"].map((label)=><a key={label} href={"#"+label.toLowerCase()} onClick={()=>setMobileMenu(false)}>{label}<ArrowUpRight size={15}/></a>)}
+          {["Work","About","Services"].map((label)=><a key={label} href={"#"+label.toLowerCase()} onClick={()=>setMobileMenu(false)}>{label}<ArrowUpRight size={15}/></a>)}
         </motion.nav>}
       </AnimatePresence>
 
@@ -75,19 +75,17 @@ export default function Home() {
         <div className="hero-image" role="img" aria-label="Cinematic city skyline at golden hour" />
         <div className="hero-gradient" />
         <div className="hero-content">
-          <motion.p className="eyebrow" initial={reduceMotion?false:{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:.6}}>Cinematic editing · Color grading · Storytelling</motion.p>
-          <motion.h1 className="hero-title" initial={reduceMotion?false:{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8,delay:.1}}>
-            EVERY FRAME.<br />A FEELING.
+          <motion.p className="eyebrow hero-kicker" initial={reduceMotion?false:{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:.5}}>Independent video editor &amp; colorist</motion.p>
+          <motion.h1 className="hero-title" initial={reduceMotion?false:{opacity:0,y:22}} animate={{opacity:1,y:0}} transition={{duration:.65,delay:.08}}>
+            EDITED WITH<br /><span>INTENTION.</span>
           </motion.h1>
-          <motion.p className="hero-script" initial={reduceMotion?false:{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:.8,delay:.24}}>Every story, a world.</motion.p>
-          <motion.p className="hero-copy" initial={reduceMotion?false:{opacity:0}} animate={{opacity:1}} transition={{duration:.8,delay:.4}}>Cinematic editing and color grading for<br className="desktop-only" /> brands, creators, and stories that deserve to be seen.</motion.p>
+          <motion.p className="hero-copy" initial={reduceMotion?false:{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{duration:.55,delay:.2}}>I shape footage into clear, cinematic stories for artists, brands, and creators.</motion.p>
           <div className="hero-actions">
-            <a className="btn btn-paper" href="#showreel"><Play size={13} fill="currentColor" /> Watch showreel</a>
-            <a className="text-link light-link" href="#work">View my work <ArrowRight size={14}/></a>
+            <a className="btn btn-paper" href="#work">Explore selected work <ArrowRight size={14}/></a>
+            <span className="hero-availability"><span className="availability-dot" /> Available for select projects</span>
           </div>
         </div>
-        <div className="hero-bottom"><a href="#work" className="scroll-cue"><span className="scroll-line" /> Scroll to explore <ArrowDownRight size={13}/></a><span className="eyebrow">Available for projects worldwide</span></div>
-        <span className="hero-index">01 / 05</span>
+        <div className="hero-bottom"><a href="#work" className="scroll-cue"><span className="scroll-line" /> Scroll to explore <ArrowDownRight size={13}/></a><span className="hero-location">EDITING&nbsp; / &nbsp;COLOR&nbsp; / &nbsp;STORY</span></div>
       </section>
 
       <section className="work-section section-pad" id="work">

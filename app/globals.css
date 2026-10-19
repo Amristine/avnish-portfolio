@@ -389,3 +389,19 @@ main, section, header, footer { min-width: 0; max-width: 100%; }
  .hero-bottom .scroll-cue{font-size:7px}
  .hero-location{font-size:6px}
 }
+
+
+/* Mobile hero must reach both viewport edges */
+@media (max-width: 760px) {
+  .hero {
+    width: 100vw;
+    max-width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    border-radius: 0;
+  }
+  .hero-image, .hero-gradient {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}

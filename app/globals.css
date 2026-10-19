@@ -1001,3 +1001,21 @@ a.contact-detail:hover { color: var(--ink); }
 .portfolio-hero .portfolio-hero-side {
   display: none !important;
 }
+
+
+/* Improve top-left brand contrast on mobile */
+@media (max-width: 760px) {
+  .nav-shell .brand-name,
+  .nav-shell .brand-sub {
+    color: #171815 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+  .nav-shell .brand-rule {
+    background-color: #8a5a36 !important;
+    opacity: 1 !important;
+  }
+  .nav-shell .menu-toggle {
+    color: #171815 !important;
+  }
+}

@@ -774,3 +774,24 @@ main, section, header, footer { min-width: 0; max-width: 100%; }
   .portfolio-hero-side { right: 7px; top: 43%; font-size: 5px; }
   .portfolio-hero-copy { right: 24px; }
 }
+
+
+/* Fine-tune portrait scale and AVNISH letter spacing */
+@media (min-width: 761px) {
+  .portfolio-portrait { width: min(39vw, 535px); }
+  .portfolio-wordmark {
+    letter-spacing: -.065em;
+    font-size: clamp(145px, 20vw, 285px);
+  }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .portfolio-portrait { width: min(44vw, 475px); }
+  .portfolio-wordmark { font-size: clamp(140px, 20vw, 220px); letter-spacing: -.06em; }
+}
+@media (max-width: 760px) {
+  .portfolio-portrait { width: min(92%, 420px); }
+  .portfolio-wordmark { letter-spacing: -.065em; }
+}
+@media (max-width: 390px) {
+  .portfolio-portrait { width: 94%; }
+}

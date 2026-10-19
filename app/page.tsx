@@ -156,27 +156,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-section section-pad" id="contact">
-        <div className="wrap contact-layout">
-          <div className="contact-intro">
-            <p className="eyebrow muted">Have a project in mind?</p>
-            <h2 className="section-title serif">Let&apos;s make something<br /><em>worth watching.</em></h2>
-            <p className="body-copy">Tell me a little about what you&apos;re creating. I&apos;d love to hear the idea and how I can help bring it to the screen.</p>
-            <a className="contact-detail" href="mailto:hello@framestudio.com"><Mail size={15}/> hello@framestudio.com <ArrowUpRight size={13}/></a>
-            <div className="contact-detail"><MapPin size={15}/> Available worldwide</div>
-            <div className="social-links"><a href="https://instagram.com" aria-label="Instagram"><Instagram size={17}/></a><a href="https://youtube.com" aria-label="YouTube"><Youtube size={18}/></a><a href="https://linkedin.com" aria-label="LinkedIn"><Linkedin size={17}/></a></div>
-          </div>
-          <form className="contact-form" onSubmit={submitInquiry}>
-            {formSent ? <div className="form-success"><span className="success-icon"><Check size={24}/></span><h3 className="serif">Thanks for reaching out.</h3><p>This demo form isn&apos;t connected to email yet. Connect it to your preferred form service to receive enquiries.</p><button type="button" className="btn btn-dark" onClick={()=>setFormSent(false)}>Send another inquiry</button></div> : <>
-              <div className="form-row"><label>Your name *<input name="name" placeholder="Jane Doe" required autoComplete="name"/></label><label>Email address *<input name="email" type="email" placeholder="you@example.com" required autoComplete="email"/></label></div>
-              <div className="form-row"><label>Project type *<select name="type" defaultValue="" required><option value="" disabled>Select a project</option><option>Brand film / commercial</option><option>Music video</option><option>Short film / documentary</option><option>YouTube / creator content</option><option>Color grading</option><option>Other</option></select></label><label>Budget range<select name="budget" defaultValue=""><option value="" disabled>Select a range</option><option>Under $500</option><option>$500–$1,500</option><option>$1,500–$5,000</option><option>$5,000+</option><option>Let's discuss</option></select></label></div>
-              <label>Tell me about the project *<textarea name="details" placeholder="The idea, the timeline, the kind of feeling you're after..." rows={4} required/></label>
-              <button className="btn btn-dark submit-btn" type="submit">Send inquiry <ArrowRight size={15}/></button>
-              <p className="form-note">This is a front-end demo. Add a form endpoint before publishing.</p>
-            </>}
-          </form>
-        </div>
-      </section>
+
 
       <footer className="site-footer">
         <a href="#home" className="brand footer-brand"><span className="brand-name">FRAME</span><span className="brand-rule"/><span className="brand-sub">VIDEO EDITOR<br/>& COLORIST</span></a>

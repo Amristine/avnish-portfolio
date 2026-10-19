@@ -657,3 +657,17 @@ main, section, header, footer { min-width: 0; max-width: 100%; }
   .portfolio-wordmark { font-size: clamp(150px, 22vw, 245px); }
   .portfolio-portrait { width: min(48vw, 520px); height: 86%; top: 14%; }
 }
+
+
+/* Keep the desktop hero side label visible */
+@media (min-width: 761px) {
+  .portfolio-hero-side {
+    display: block !important;
+    z-index: 6;
+    right: clamp(24px, 4.5vw, 68px);
+    bottom: 27%;
+    color: #55544e;
+    opacity: 1;
+    writing-mode: vertical-rl;
+  }
+}

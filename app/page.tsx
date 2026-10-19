@@ -39,7 +39,7 @@ export default function Home() {
       <header className="nav-shell">
         <a href="#home" className="brand" aria-label="Avnish Yadav home">
           <span className="brand-name">AVNISH</span><span className="brand-rule" />
-          <span className="brand-sub">VIDEO EDITOR<br />& COLORIST</span>
+          <span className="brand-sub">VIDEO PRODUCTION<br />&amp; TEAM LEADERSHIP</span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       <footer className="site-footer">
-        <a href="#home" className="brand footer-brand"><span className="brand-name">AVNISH</span><span className="brand-rule"/><span className="brand-sub">VIDEO EDITOR<br/>& COLORIST</span></a>
+        <a href="#home" className="brand footer-brand"><span className="brand-name">AVNISH</span><span className="brand-rule"/><span className="brand-sub">VIDEO PRODUCTION<br/>&amp; TEAM LEADERSHIP</span></a>
         <nav className="footer-nav"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
         <span className="copyright">© {new Date().getFullYear()} AVNISH YADAV. ALL RIGHTS RESERVED.</span>
       </footer>

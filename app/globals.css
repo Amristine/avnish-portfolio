@@ -1217,3 +1217,16 @@ a.contact-detail:hover { color: var(--ink); }
     transform: translateY(-18px) !important;
   }
 }
+
+
+/* Move the portrait further upward on mobile */
+@media (max-width: 760px) {
+  .portfolio-portrait img {
+    transform: translateY(-40px) !important;
+  }
+}
+@media (max-width: 390px) {
+  .portfolio-portrait img {
+    transform: translateY(-32px) !important;
+  }
+}

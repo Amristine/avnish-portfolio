@@ -851,3 +851,16 @@ main, section, header, footer { min-width: 0; max-width: 100%; }
 @media (max-width: 390px) {
   .portfolio-hero-side { color: #171815 !important; }
 }
+
+
+/* Give the AVNISH wordmark more breathing room on desktop */
+@media (min-width: 761px) {
+  .portfolio-wordmark {
+    letter-spacing: -.025em !important;
+    font-stretch: condensed;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .portfolio-wordmark { letter-spacing: -.03em !important; }
+}

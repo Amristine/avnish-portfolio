@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import {
-  ArrowDownRight, ArrowRight, ArrowUpRight, Aperture, Check, Clapperboard,
+  ArrowDownRight, ArrowRight, ArrowUpRight, Aperture, Check, Clapperboard, UsersRound,
   Menu, Scissors, X, Layers3, Mail, MapPin, Instagram, Phone,
   Youtube, Linkedin
 } from "lucide-react";
@@ -138,7 +138,7 @@ export default function Home() {
           </div>
           <div className="service-grid">
             <article className="service-item"><Scissors size={21}/><span className="service-index">01</span><h3>Video editing</h3><p>Story-driven edits for films, brand content, YouTube, and social media.</p></article>
-            <article className="service-item"><Aperture size={21}/><span className="service-index">02</span><h3>Color grading</h3><p>Cinematic looks that set the right mood and bring your story to life.</p></article>
+            <article className="service-item"><UsersRound size={21}/><span className="service-index">02</span><h3>Team leadership</h3><p>Guiding creative teams, coordinating feedback, and keeping projects on track from planning to final delivery.</p></article>
             <article className="service-item"><Layers3 size={21}/><span className="service-index">03</span><h3>Post-production</h3><p>Finishing, sound design coordination, and delivery in multiple formats.</p></article>
             <article className="service-item"><Clapperboard size={21}/><span className="service-index">04</span><h3>Creative support</h3><p>A second pair of eyes to help shape the strongest version of your footage.</p></article>
           </div>

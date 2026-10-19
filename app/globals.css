@@ -1297,11 +1297,3 @@ a.contact-detail:hover { color: var(--ink); }
   }
 }
 
-
-/* Slightly enlarge the portrait on mobile */
-@media (max-width: 760px) {
-  .portfolio-portrait {
-    width: min(94vw, 480px) !important;
-    height: 70% !important;
-  }
-}

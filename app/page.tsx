@@ -170,7 +170,7 @@ export default function Home() {
               <a href="https://drive.google.com/drive/folders/1VQH6IfBTGMBaymnKoNJtXDAoBCBKTMQS" target="_blank" rel="noreferrer">Additional work 05 <ArrowUpRight size={14}/></a>
             </div>
           </div>
-          <div className="work-footer"><span className="eyebrow muted">Selected projects / 2024—2026</span><a className="text-link" href="#contact">Discuss a project <ArrowUpRight size={14}/></a></div>
+          <div className="work-footer"><span className="eyebrow muted">Selected projects / 2022—2026</span><a className="text-link" href="#contact">Discuss a project <ArrowUpRight size={14}/></a></div>
         </div>
       </section>
 

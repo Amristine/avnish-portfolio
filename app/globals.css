@@ -720,3 +720,14 @@ main, section, header, footer { min-width: 0; max-width: 100%; }
   .portfolio-portrait img { transform: translateY(-30px); }
   .portfolio-hero-side { right: 20px; top: 45%; }
 }
+
+
+/* Real portfolio videos: play directly in the work grid */
+.video-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.video-project-card { display: block; width: 100%; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: default; }
+.video-project-player { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #151515; }
+.video-project-player video { width: 100%; height: 100%; display: block; object-fit: contain; background: #111; }
+.video-project-card .project-meta { display: flex; }
+@media (max-width: 760px) {
+  .video-project-grid { grid-template-columns: minmax(0, 1fr); }
+}

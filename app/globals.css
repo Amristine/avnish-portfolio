@@ -1258,7 +1258,7 @@ a.contact-detail:hover { color: var(--ink); }
 /* Nudge the hero copy upward on mobile */
 @media (max-width: 760px) {
   .portfolio-hero-copy {
-    bottom: 135px !important;
+    bottom: 155px !important;
   }
 }
 @media (max-width: 390px) {

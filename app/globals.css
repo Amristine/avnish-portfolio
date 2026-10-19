@@ -1141,7 +1141,7 @@ a.contact-detail:hover { color: var(--ink); }
 
 /* Slightly soften the hero headline weight */
 .portfolio-hero-copy h1 {
-  font-weight: 650 !important;
+  font-weight: 600 !important;
 }
 
 

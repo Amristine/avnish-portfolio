@@ -1281,7 +1281,7 @@ a.contact-detail:hover { color: var(--ink); }
   .portfolio-portrait {
     top: 2% !important;
     height: 81% !important;
-    width: min(34vw, 475px) !important;
+    width: min(36vw, 500px) !important;
   }
   .portfolio-hero-copy {
     bottom: clamp(120px, 16vh, 150px) !important;

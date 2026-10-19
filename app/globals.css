@@ -1176,3 +1176,16 @@ a.contact-detail:hover { color: var(--ink); }
     top: 23% !important;
   }
 }
+
+
+/* Give the AVNISH hero wordmark more letter spacing */
+@media (min-width: 761px) {
+  .portfolio-wordmark {
+    letter-spacing: 0.035em !important;
+  }
+}
+@media (max-width: 760px) {
+  .portfolio-wordmark {
+    letter-spacing: -0.025em !important;
+  }
+}

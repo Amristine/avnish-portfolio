@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Aperture, Check, Clapperboard,
@@ -43,7 +43,14 @@ const fadeUp: Variants = {
 export default function Home() {
   const [activeProject, setActiveProject] = useState<(typeof projects)[number] | null>(null);
   const [mobileMenu, setMobileMenu] = useState(false);
-    const reduceMotion = useReducedMotion();
+  const [grade, setGrade] = useState(50);
+  const [formSent, setFormSent] = useState(false);
+  const reduceMotion = useReducedMotion();
+
+  function submitInquiry(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setFormSent(true);
+  }
 
   return (
     <main>
@@ -53,14 +60,14 @@ export default function Home() {
           <span className="brand-sub">VIDEO EDITOR<br />& COLORIST</span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a>
+          <a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
         </nav>
-        <a className="nav-cta" href="#work">Explore work <ArrowUpRight size={13} /></a>
+        <a className="nav-cta" href="#contact">Let&apos;s talk <ArrowUpRight size={13} /></a>
         <button className="menu-toggle" onClick={() => setMobileMenu(!mobileMenu)} aria-label={mobileMenu ? "Close menu" : "Open menu"}>{mobileMenu ? <X /> : <Menu />}</button>
       </header>
       <AnimatePresence>
         {mobileMenu && <motion.nav className="mobile-nav" initial={{opacity:0,y:-8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-8}}>
-          {["Work","About","Services"].map((label)=><a key={label} href={"#"+label.toLowerCase()} onClick={()=>setMobileMenu(false)}>{label}<ArrowUpRight size={15}/></a>)}
+          {["Work","About","Services","Contact"].map((label)=><a key={label} href={"#"+label.toLowerCase()} onClick={()=>setMobileMenu(false)}>{label}<ArrowUpRight size={15}/></a>)}
         </motion.nav>}
       </AnimatePresence>
 
@@ -68,17 +75,19 @@ export default function Home() {
         <div className="hero-image" role="img" aria-label="Cinematic city skyline at golden hour" />
         <div className="hero-gradient" />
         <div className="hero-content">
-          <motion.p className="eyebrow hero-kicker" initial={reduceMotion?false:{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:.5}}>Independent video editor &amp; colorist</motion.p>
-          <motion.h1 className="hero-title" initial={reduceMotion?false:{opacity:0,y:22}} animate={{opacity:1,y:0}} transition={{duration:.65,delay:.08}}>
-            EDITED WITH<br /><span>INTENTION.</span>
+          <motion.p className="eyebrow" initial={reduceMotion?false:{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:.6}}>Cinematic editing · Color grading · Storytelling</motion.p>
+          <motion.h1 className="hero-title" initial={reduceMotion?false:{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8,delay:.1}}>
+            EVERY FRAME.<br />A FEELING.
           </motion.h1>
-          <motion.p className="hero-copy" initial={reduceMotion?false:{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{duration:.55,delay:.2}}>I shape footage into clear, cinematic stories for artists, brands, and creators.</motion.p>
+          <motion.p className="hero-script" initial={reduceMotion?false:{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:.8,delay:.24}}>Every story, a world.</motion.p>
+          <motion.p className="hero-copy" initial={reduceMotion?false:{opacity:0}} animate={{opacity:1}} transition={{duration:.8,delay:.4}}>Cinematic editing and color grading for<br className="desktop-only" /> brands, creators, and stories that deserve to be seen.</motion.p>
           <div className="hero-actions">
-            <a className="btn btn-paper" href="#work">Explore selected work <ArrowRight size={14}/></a>
-            <span className="hero-availability"><span className="availability-dot" /> Available for select projects</span>
+            <a className="btn btn-paper" href="#showreel"><Play size={13} fill="currentColor" /> Watch showreel</a>
+            <a className="text-link light-link" href="#work">View my work <ArrowRight size={14}/></a>
           </div>
         </div>
-        <div className="hero-bottom"><a href="#work" className="scroll-cue"><span className="scroll-line" /> Scroll to explore <ArrowDownRight size={13}/></a><span className="hero-location">EDITING&nbsp; / &nbsp;COLOR&nbsp; / &nbsp;STORY</span></div>
+        <div className="hero-bottom"><a href="#work" className="scroll-cue"><span className="scroll-line" /> Scroll to explore <ArrowDownRight size={13}/></a><span className="eyebrow">Available for projects worldwide</span></div>
+        <span className="hero-index">01 / 05</span>
       </section>
 
       <section className="work-section section-pad" id="work">
@@ -89,7 +98,7 @@ export default function Home() {
               <h2 className="section-title serif">Stories I&apos;ve<br />helped bring<br />to life<span className="period">.</span></h2>
               <span className="short-rule" />
               <p className="body-copy">A few selected projects for brands, artists, and people with a story to tell.</p>
-              <a href="#work" className="text-link">Have something in mind? <ArrowRight size={14}/></a>
+              <a href="#contact" className="text-link">Have something in mind? <ArrowRight size={14}/></a>
             </motion.div>
             <div className="project-grid">
               {projects.map((project, index) => (
@@ -101,7 +110,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="work-footer"><span className="eyebrow muted">Selected projects / 2024—2026</span><a className="text-link" href="#work">Discuss a project <ArrowUpRight size={14}/></a></div>
+          <div className="work-footer"><span className="eyebrow muted">Selected projects / 2024—2026</span><a className="text-link" href="#contact">Discuss a project <ArrowUpRight size={14}/></a></div>
         </div>
       </section>
 
@@ -117,7 +126,24 @@ export default function Home() {
         <span className="reel-side-label">EDIT / COLOR / FEEL</span>
       </section>
 
-
+      <section className="grade-section section-pad" id="grading">
+        <div className="wrap grade-layout">
+          <div className="grade-intro">
+            <p className="eyebrow muted">Color grading</p>
+            <h2 className="section-title serif">Same footage.<br />A different world<span className="period">.</span></h2>
+            <p className="body-copy">Color is more than a look. It&apos;s where the emotion finds its voice. Move the handle to compare the treatment.</p>
+            <div className="grade-presets"><button className={grade===0?"preset active":"preset"} onClick={()=>setGrade(100)}>Original</button><button className={grade===50?"preset active":"preset"} onClick={()=>setGrade(50)}>Cinematic</button><button className={grade===100?"preset active":"preset"} onClick={()=>setGrade(0)}>Moody</button></div>
+          </div>
+          <div className="grade-demo">
+            <div className="grade-image grade-final" style={{backgroundImage:"url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=90')",filter:grade===0?"saturate(.55) brightness(1.16) contrast(.78)":grade===100?"saturate(.8) brightness(.64) contrast(1.22) hue-rotate(-8deg)":"saturate(.92) brightness(.83) contrast(1.12) sepia(.13)"}}/>
+            <div className="grade-image grade-original" style={{width:grade+"%"}}><div className="grade-original-inner" style={{backgroundImage:"url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=90')"}}/></div>
+            <span className="grade-label label-left">Original footage</span><span className="grade-label label-right">Final grade</span>
+            <input className="grade-range" type="range" min="0" max="100" value={grade} onChange={(e)=>setGrade(Number(e.target.value))} aria-label="Compare original and graded image"/>
+            <span className="grade-handle" style={{left:grade+"%"}}><MoveHorizontal size={16}/></span>
+          </div>
+        </div>
+        <div className="wrap grade-caption"><span className="eyebrow muted">01 — 03</span><span className="eyebrow muted">Contrast · Tone · Atmosphere</span></div>
+      </section>
 
       <section className="about-section" id="about">
         <div className="about-image"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1500&q=85" alt="Film editing suite with multiple screens" loading="lazy"/><span className="image-stamp"><Aperture size={18}/> FRAME NOTES / 01</span></div>
@@ -126,7 +152,7 @@ export default function Home() {
           <h2 className="section-title serif">Not just cutting clips.<br /><em>Finding the story.</em></h2>
           <p className="body-copy">I&apos;m an independent video editor and colorist focused on creating visuals that hold attention, build emotion, and make every second count.</p>
           <p className="body-copy">From the first rough cut to the final grade, I work closely with creators and brands to turn ideas into thoughtful, cinematic stories.</p>
-          <a className="text-link" href="#work">Let&apos;s get to know each other <ArrowRight size={14}/></a>
+          <a className="text-link" href="#contact">Let&apos;s get to know each other <ArrowRight size={14}/></a>
           <div className="about-stats"><div><strong>100<span>+</span></strong><small>Projects</small></div><div><strong>5<span>+</span></strong><small>Years experience</small></div><div><strong>Worldwide</strong><small>Working remotely</small></div></div>
           <p className="fineprint">Replace these sample stats with verified personal details.</p>
         </div>
@@ -136,7 +162,7 @@ export default function Home() {
         <div className="wrap">
           <div className="services-heading">
             <div><p className="eyebrow bronze">What I can help with</p><h2 className="section-title serif">From raw footage<br />to <em>something you feel.</em></h2></div>
-            <div className="services-aside"><p>Post-production for brands, creators, and artists who care about quality, storytelling, and visual impact.</p><a className="text-link light-link" href="#work">Discuss your project <ArrowUpRight size={14}/></a></div>
+            <div className="services-aside"><p>Post-production for brands, creators, and artists who care about quality, storytelling, and visual impact.</p><a className="text-link light-link" href="#contact">Discuss your project <ArrowUpRight size={14}/></a></div>
           </div>
           <div className="service-grid">
             <article className="service-item"><Scissors size={21}/><span className="service-index">01</span><h3>Video editing</h3><p>Story-driven edits for films, brand content, YouTube, and social media.</p></article>
@@ -147,11 +173,31 @@ export default function Home() {
         </div>
       </section>
 
-
+      <section className="contact-section section-pad" id="contact">
+        <div className="wrap contact-layout">
+          <div className="contact-intro">
+            <p className="eyebrow muted">Have a project in mind?</p>
+            <h2 className="section-title serif">Let&apos;s make something<br /><em>worth watching.</em></h2>
+            <p className="body-copy">Tell me a little about what you&apos;re creating. I&apos;d love to hear the idea and how I can help bring it to the screen.</p>
+            <a className="contact-detail" href="mailto:hello@framestudio.com"><Mail size={15}/> hello@framestudio.com <ArrowUpRight size={13}/></a>
+            <div className="contact-detail"><MapPin size={15}/> Available worldwide</div>
+            <div className="social-links"><a href="https://instagram.com" aria-label="Instagram"><Instagram size={17}/></a><a href="https://youtube.com" aria-label="YouTube"><Youtube size={18}/></a><a href="https://linkedin.com" aria-label="LinkedIn"><Linkedin size={17}/></a></div>
+          </div>
+          <form className="contact-form" onSubmit={submitInquiry}>
+            {formSent ? <div className="form-success"><span className="success-icon"><Check size={24}/></span><h3 className="serif">Thanks for reaching out.</h3><p>This demo form isn&apos;t connected to email yet. Connect it to your preferred form service to receive enquiries.</p><button type="button" className="btn btn-dark" onClick={()=>setFormSent(false)}>Send another inquiry</button></div> : <>
+              <div className="form-row"><label>Your name *<input name="name" placeholder="Jane Doe" required autoComplete="name"/></label><label>Email address *<input name="email" type="email" placeholder="you@example.com" required autoComplete="email"/></label></div>
+              <div className="form-row"><label>Project type *<select name="type" defaultValue="" required><option value="" disabled>Select a project</option><option>Brand film / commercial</option><option>Music video</option><option>Short film / documentary</option><option>YouTube / creator content</option><option>Color grading</option><option>Other</option></select></label><label>Budget range<select name="budget" defaultValue=""><option value="" disabled>Select a range</option><option>Under $500</option><option>$500–$1,500</option><option>$1,500–$5,000</option><option>$5,000+</option><option>Let's discuss</option></select></label></div>
+              <label>Tell me about the project *<textarea name="details" placeholder="The idea, the timeline, the kind of feeling you're after..." rows={4} required/></label>
+              <button className="btn btn-dark submit-btn" type="submit">Send inquiry <ArrowRight size={15}/></button>
+              <p className="form-note">This is a front-end demo. Add a form endpoint before publishing.</p>
+            </>}
+          </form>
+        </div>
+      </section>
 
       <footer className="site-footer">
         <a href="#home" className="brand footer-brand"><span className="brand-name">FRAME</span><span className="brand-rule"/><span className="brand-sub">VIDEO EDITOR<br/>& COLORIST</span></a>
-        <nav className="footer-nav"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Contact</a></nav>
+        <nav className="footer-nav"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
         <span className="copyright">© {new Date().getFullYear()} FRAME STUDIO. REPLACE WITH YOUR NAME.</span>
       </footer>
 

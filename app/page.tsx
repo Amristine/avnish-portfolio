@@ -93,7 +93,7 @@ export default function Home() {
                   <span className="project-type">{project.category} <span>·</span> {project.services}</span>
                 </article>
               ))}
-            </div>      </div>
+            </div>
           </div>
           <div className="work-footer"><span className="eyebrow muted">Selected projects / 2024—2026</span><a className="text-link" href="#contact">Discuss a project <ArrowUpRight size={14}/></a></div>
         </div>

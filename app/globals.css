@@ -607,3 +607,12 @@ main, section, header, footer { min-width: 0; max-width: 100%; }
   .portfolio-portrait { width: min(50vw, 530px); height: 80%; top: 18%; }
   .portfolio-hero-copy { width: 290px; }
 }
+
+
+/* Refine desktop wordmark scale */
+@media (min-width: 761px) {
+  .portfolio-wordmark { font-size: clamp(155px, 22vw, 320px); }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .portfolio-wordmark { font-size: clamp(150px, 22vw, 245px); }
+}

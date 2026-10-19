@@ -731,3 +731,46 @@ main, section, header, footer { min-width: 0; max-width: 100%; }
 @media (max-width: 760px) {
   .video-project-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+
+/* Mobile hero: keep the header readable and show the side label */
+@media (max-width: 760px) {
+  .nav-shell {
+    color: #171815 !important;
+    border-bottom-color: rgba(23, 24, 21, .2) !important;
+    background: rgba(238, 237, 232, .96);
+  }
+  .nav-shell .nav-cta {
+    color: #171815;
+    border-color: rgba(23, 24, 21, .4);
+  }
+  .nav-shell .nav-cta:hover {
+    color: #f4f2ec;
+    background: #171815;
+  }
+  .portfolio-hero .portfolio-hero-top {
+    height: 62px;
+    display: block;
+    border-bottom: 0;
+    pointer-events: none;
+  }
+  .portfolio-hero-side {
+    display: block !important;
+    position: absolute;
+    z-index: 8;
+    top: 45%;
+    right: 10px;
+    bottom: auto;
+    writing-mode: vertical-rl;
+    color: #4e4d47;
+    font-size: 6px;
+    letter-spacing: .14em;
+    opacity: 1;
+  }
+  .portfolio-hero-copy { right: 30px; }
+  .portfolio-hero-bottom { right: 16px; left: 16px; }
+}
+@media (max-width: 390px) {
+  .portfolio-hero-side { right: 7px; top: 43%; font-size: 5px; }
+  .portfolio-hero-copy { right: 24px; }
+}

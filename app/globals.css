@@ -1253,3 +1253,16 @@ a.contact-detail:hover { color: var(--ink); }
     font-size: 13px !important;
   }
 }
+
+
+/* Nudge the hero copy upward on mobile */
+@media (max-width: 760px) {
+  .portfolio-hero-copy {
+    bottom: 100px !important;
+  }
+}
+@media (max-width: 390px) {
+  .portfolio-hero-copy {
+    bottom: 98px !important;
+  }
+}

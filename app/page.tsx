@@ -10,28 +10,12 @@ import {
 
 const projects = [
   {
-    number: "01", title: "A Study in Motion", category: "Brand Film", services: "Editing · Color Grading",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1500&q=85",
-    description: "A restrained automotive film built around detail, movement, and the rhythm between shots.",
-    video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+    number: "01", title: "Video Project 01", category: "Video", services: "Editing · Color Grading",
+    video: "/videoav.mp4"
   },
   {
-    number: "02", title: "After Hours", category: "Music Video", services: "Editing · Color Grading",
-    image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1500&q=85",
-    description: "A performance-led visual with rich shadows, warm highlights, and an edit that follows the music.",
-    video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-  },
-  {
-    number: "03", title: "Into the Unknown", category: "Travel Film", services: "Story · Editing · Grade",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1500&q=85",
-    description: "A quiet, cinematic travel story shaped around changing light and a slower pace.",
-    video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-  },
-  {
-    number: "04", title: "The Quiet Hours", category: "Short Film", services: "Editing · Color Grading",
-    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1500&q=85",
-    description: "A character-focused short, shaped through pauses, close details, and a naturalistic grade.",
-    video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+    number: "02", title: "Video Project 02", category: "Video", services: "Editing · Color Grading",
+    video: "/videoav1.mp4"
   },
 ];
 
@@ -41,7 +25,6 @@ const fadeUp: Variants = {
 };
 
 export default function Home() {
-  const [activeProject, setActiveProject] = useState<(typeof projects)[number] | null>(null);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [grade, setGrade] = useState(50);
   const [formSent, setFormSent] = useState(false);
@@ -98,15 +81,19 @@ export default function Home() {
               <p className="body-copy">A few selected projects for brands, artists, and people with a story to tell.</p>
               <a href="#contact" className="text-link">Have something in mind? <ArrowRight size={14}/></a>
             </motion.div>
-            <div className="project-grid">
-              {projects.map((project, index) => (
-                <motion.button className="project-card" key={project.number} onClick={() => setActiveProject(project)} initial={reduceMotion?false:{opacity:0,y:22}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.14}} transition={{duration:.6,delay:index*.08}} aria-label={"Open project "+project.title}>
-                  <span className="project-image-wrap"><img src={project.image} alt={project.title + " cinematic still"} className="project-image" loading={index < 2 ? "eager" : "lazy"} /><span className="project-play"><Play size={14} fill="currentColor"/></span><span className="project-open"><ArrowUpRight size={16}/></span></span>
+            <div className="project-grid video-project-grid">
+              {projects.map((project) => (
+                <article className="project-card video-project-card" key={project.number}>
+                  <span className="project-image-wrap video-project-player">
+                    <video controls playsInline preload="metadata" src={project.video} aria-label={project.title}>
+                      Your browser does not support video playback.
+                    </video>
+                  </span>
                   <span className="project-meta"><span className="project-name">{project.title}</span><span className="project-number">{project.number}</span></span>
                   <span className="project-type">{project.category} <span>·</span> {project.services}</span>
-                </motion.button>
+                </article>
               ))}
-            </div>
+            </div>      </div>
           </div>
           <div className="work-footer"><span className="eyebrow muted">Selected projects / 2024—2026</span><a className="text-link" href="#contact">Discuss a project <ArrowUpRight size={14}/></a></div>
         </div>
@@ -119,7 +106,7 @@ export default function Home() {
           <p className="eyebrow bronze">The showreel · 2026</p>
           <h2 className="serif showreel-title">A thousand decisions.<br /><em>One seamless story.</em></h2>
           <p className="showreel-copy">A short journey through frames, moods, and moments.<br className="desktop-only"/> A little of everything I love to make.</p>
-          <button className="reel-play" onClick={()=>setActiveProject({ ...projects[0], title:"Showreel — 2026", description:"Replace this sample video with your actual showreel when it's ready." })}><span className="round-play"><Play size={15} fill="currentColor"/></span><span className="eyebrow">Play showreel</span><span className="reel-duration">00:60</span></button>
+          <a className="reel-play" href="#work"><span className="round-play"><ArrowDownRight size={15}/></span><span className="eyebrow">View selected work</span><span className="reel-duration">02 VIDEOS</span></a>
         </div>
         <span className="reel-side-label">EDIT / COLOR / FEEL</span>
       </section>
@@ -180,16 +167,6 @@ export default function Home() {
         <span className="copyright">© {new Date().getFullYear()} AVNISH YADAV. ALL RIGHTS RESERVED.</span>
       </footer>
 
-      <AnimatePresence>
-        {activeProject && <motion.div className="project-modal" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={()=>setActiveProject(null)} role="presentation">
-          <motion.div className="modal-panel" initial={{opacity:0,y:20,scale:.98}} animate={{opacity:1,y:0,scale:1}} exit={{opacity:0,y:10,scale:.98}} onClick={(e)=>e.stopPropagation()} role="dialog" aria-modal="true" aria-label={activeProject.title}>
-            <button className="modal-close" onClick={()=>setActiveProject(null)} aria-label="Close project"><X size={20}/></button>
-            <div className="modal-video"><video controls playsInline poster={activeProject.image} src={activeProject.video}>Your browser does not support the video tag.</video></div>
-            <div className="modal-details"><div><p className="eyebrow muted">{activeProject.category} / {activeProject.number}</p><h2 className="serif">{activeProject.title}</h2><p>{activeProject.description}</p></div><span className="eyebrow muted">{activeProject.services}</span></div>
-            <p className="modal-note">Sample preview only — replace with a project you have permission to display.</p>
-          </motion.div>
-        </motion.div>}
-      </AnimatePresence>
     </main>
   );
 }

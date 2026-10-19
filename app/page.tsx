@@ -78,7 +78,7 @@ export default function Home() {
         </div>
         <div className="portfolio-wordmark" aria-hidden="true">PORTFOLIO</div>
         <div className="portfolio-portrait">
-          <img src="/IMG_6504%20(3).png" alt="Portrait representing the video editor" />
+          <img src="/portrait1.png" alt="Portrait representing the video editor" />
         </div>
         <div className="portfolio-hero-copy">
           <p className="eyebrow">VIDEO EDITOR &amp; COLORIST</p>

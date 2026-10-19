@@ -126,25 +126,6 @@ export default function Home() {
         <span className="reel-side-label">EDIT / COLOR / FEEL</span>
       </section>
 
-      <section className="grade-section section-pad" id="grading">
-        <div className="wrap grade-layout">
-          <div className="grade-intro">
-            <p className="eyebrow muted">Color grading</p>
-            <h2 className="section-title serif">Same footage.<br />A different world<span className="period">.</span></h2>
-            <p className="body-copy">Color is more than a look. It&apos;s where the emotion finds its voice. Move the handle to compare the treatment.</p>
-            <div className="grade-presets"><button className={grade===0?"preset active":"preset"} onClick={()=>setGrade(100)}>Original</button><button className={grade===50?"preset active":"preset"} onClick={()=>setGrade(50)}>Cinematic</button><button className={grade===100?"preset active":"preset"} onClick={()=>setGrade(0)}>Moody</button></div>
-          </div>
-          <div className="grade-demo">
-            <div className="grade-image grade-final" style={{backgroundImage:"url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=90')",filter:grade===0?"saturate(.55) brightness(1.16) contrast(.78)":grade===100?"saturate(.8) brightness(.64) contrast(1.22) hue-rotate(-8deg)":"saturate(.92) brightness(.83) contrast(1.12) sepia(.13)"}}/>
-            <div className="grade-image grade-original" style={{width:grade+"%"}}><div className="grade-original-inner" style={{backgroundImage:"url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=90')"}}/></div>
-            <span className="grade-label label-left">Original footage</span><span className="grade-label label-right">Final grade</span>
-            <input className="grade-range" type="range" min="0" max="100" value={grade} onChange={(e)=>setGrade(Number(e.target.value))} aria-label="Compare original and graded image"/>
-            <span className="grade-handle" style={{left:grade+"%"}}><MoveHorizontal size={16}/></span>
-          </div>
-        </div>
-        <div className="wrap grade-caption"><span className="eyebrow muted">01 — 03</span><span className="eyebrow muted">Contrast · Tone · Atmosphere</span></div>
-      </section>
-
       <section className="about-section" id="about">
         <div className="about-image"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1500&q=85" alt="Film editing suite with multiple screens" loading="lazy"/><span className="image-stamp"><Aperture size={18}/> FRAME NOTES / 01</span></div>
         <div className="about-copy">

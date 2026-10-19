@@ -231,7 +231,7 @@ export default function Home() {
             <span className="contact-visual-index">AVNISH YADAV <span>·</span> VIDEO EDITOR</span>
             <div className="contact-orbit" aria-hidden="true"><span /><span /><span /></div>
             <p className="contact-visual-kicker">GOOD STORIES START<br />WITH A CONVERSATION.</p>
-            <a className="contact-visual-link" href="mailto:Zerix2510@gmail.com">Start a conversation <ArrowUpRight size={18}/></a>
+            <a className="contact-visual-link" href="https://wa.me/919930014023" target="_blank" rel="noreferrer">Start a conversation <ArrowUpRight size={18}/></a>
             <span className="contact-visual-foot">AVAILABLE WORLDWIDE · 2026</span>
           </aside>
         </div>

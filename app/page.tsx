@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Aperture, Check, Clapperboard,
@@ -43,14 +43,7 @@ const fadeUp: Variants = {
 export default function Home() {
   const [activeProject, setActiveProject] = useState<(typeof projects)[number] | null>(null);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [grade, setGrade] = useState(50);
-  const [formSent, setFormSent] = useState(false);
-  const reduceMotion = useReducedMotion();
-
-  function submitInquiry(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setFormSent(true);
-  }
+    const reduceMotion = useReducedMotion();
 
   return (
     <main>
@@ -96,7 +89,7 @@ export default function Home() {
               <h2 className="section-title serif">Stories I&apos;ve<br />helped bring<br />to life<span className="period">.</span></h2>
               <span className="short-rule" />
               <p className="body-copy">A few selected projects for brands, artists, and people with a story to tell.</p>
-              <a href="#contact" className="text-link">Have something in mind? <ArrowRight size={14}/></a>
+              <a href="#work" className="text-link">Have something in mind? <ArrowRight size={14}/></a>
             </motion.div>
             <div className="project-grid">
               {projects.map((project, index) => (
@@ -108,7 +101,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="work-footer"><span className="eyebrow muted">Selected projects / 2024—2026</span><a className="text-link" href="#contact">Discuss a project <ArrowUpRight size={14}/></a></div>
+          <div className="work-footer"><span className="eyebrow muted">Selected projects / 2024—2026</span><a className="text-link" href="#work">Discuss a project <ArrowUpRight size={14}/></a></div>
         </div>
       </section>
 
@@ -133,7 +126,7 @@ export default function Home() {
           <h2 className="section-title serif">Not just cutting clips.<br /><em>Finding the story.</em></h2>
           <p className="body-copy">I&apos;m an independent video editor and colorist focused on creating visuals that hold attention, build emotion, and make every second count.</p>
           <p className="body-copy">From the first rough cut to the final grade, I work closely with creators and brands to turn ideas into thoughtful, cinematic stories.</p>
-          <a className="text-link" href="#contact">Let&apos;s get to know each other <ArrowRight size={14}/></a>
+          <a className="text-link" href="#work">Let&apos;s get to know each other <ArrowRight size={14}/></a>
           <div className="about-stats"><div><strong>100<span>+</span></strong><small>Projects</small></div><div><strong>5<span>+</span></strong><small>Years experience</small></div><div><strong>Worldwide</strong><small>Working remotely</small></div></div>
           <p className="fineprint">Replace these sample stats with verified personal details.</p>
         </div>
@@ -143,7 +136,7 @@ export default function Home() {
         <div className="wrap">
           <div className="services-heading">
             <div><p className="eyebrow bronze">What I can help with</p><h2 className="section-title serif">From raw footage<br />to <em>something you feel.</em></h2></div>
-            <div className="services-aside"><p>Post-production for brands, creators, and artists who care about quality, storytelling, and visual impact.</p><a className="text-link light-link" href="#contact">Discuss your project <ArrowUpRight size={14}/></a></div>
+            <div className="services-aside"><p>Post-production for brands, creators, and artists who care about quality, storytelling, and visual impact.</p><a className="text-link light-link" href="#work">Discuss your project <ArrowUpRight size={14}/></a></div>
           </div>
           <div className="service-grid">
             <article className="service-item"><Scissors size={21}/><span className="service-index">01</span><h3>Video editing</h3><p>Story-driven edits for films, brand content, YouTube, and social media.</p></article>
@@ -158,7 +151,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <a href="#home" className="brand footer-brand"><span className="brand-name">FRAME</span><span className="brand-rule"/><span className="brand-sub">VIDEO EDITOR<br/>& COLORIST</span></a>
-        <nav className="footer-nav"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+        <nav className="footer-nav"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Contact</a></nav>
         <span className="copyright">© {new Date().getFullYear()} FRAME STUDIO. REPLACE WITH YOUR NAME.</span>
       </footer>
 

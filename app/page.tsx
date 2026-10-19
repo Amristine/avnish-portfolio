@@ -73,8 +73,6 @@ export default function Home() {
 
       <section className="hero dark portfolio-hero" id="home">
         <div className="portfolio-hero-top">
-          <span>INDEPENDENT VIDEO EDITOR</span>
-          <span className="hero-status"><i /> AVAILABLE FOR PROJECTS</span>
         </div>
         <div className="portfolio-wordmark" aria-hidden="true">AVNISH</div>
         <div className="portfolio-portrait">

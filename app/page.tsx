@@ -78,6 +78,14 @@ export default function Home() {
               <h2 className="section-title serif">Stories I&apos;ve<br />helped bring<br />to life<span className="period">.</span></h2>
               <span className="short-rule" />
               <p className="body-copy">A few selected projects for brands, artists, and people with a story to tell.</p>
+              <div className="more-work-links">
+                <p className="eyebrow muted">More work · Google Drive</p>
+                <a href="https://drive.google.com/drive/folders/1FhMHQ9o2X-rF_xX-snW7dnosL8DdSkoi" target="_blank" rel="noreferrer">Additional work 01 <ArrowUpRight size={14}/></a>
+                <a href="https://drive.google.com/drive/folders/1nst6TjwDmUlAzXijmCoykf4rq8k3WtWv" target="_blank" rel="noreferrer">Additional work 02 <ArrowUpRight size={14}/></a>
+                <a href="https://drive.google.com/drive/folders/1rwTMpDWSTgnWToox-sgUorVteweaFt-E" target="_blank" rel="noreferrer">Additional work 03 <ArrowUpRight size={14}/></a>
+                <a href="https://drive.google.com/drive/folders/1ciDIhZFQc5V5TBkzcRv-9DzSm99_iPaN" target="_blank" rel="noreferrer">Additional work 04 <ArrowUpRight size={14}/></a>
+                <a href="https://drive.google.com/drive/folders/1VQH6IfBTGMBaymnKoNJtXDAoBCBKTMQS" target="_blank" rel="noreferrer">Additional work 05 <ArrowUpRight size={14}/></a>
+              </div>
               <a href="#contact" className="text-link">Have something in mind? <ArrowRight size={14}/></a>
             </motion.div>
             <div className="project-grid video-project-grid">

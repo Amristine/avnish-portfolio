@@ -1222,11 +1222,11 @@ a.contact-detail:hover { color: var(--ink); }
 /* Move the portrait further upward on mobile */
 @media (max-width: 760px) {
   .portfolio-portrait img {
-    transform: translateY(-40px) !important;
+    transform: translateY(-55px) !important;
   }
 }
 @media (max-width: 390px) {
   .portfolio-portrait img {
-    transform: translateY(-32px) !important;
+    transform: translateY(-47px) !important;
   }
 }

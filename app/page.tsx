@@ -55,8 +55,8 @@ export default function Home() {
   return (
     <main>
       <header className="nav-shell">
-        <a href="#home" className="brand" aria-label="FRAME home">
-          <span className="brand-name">FRAME</span><span className="brand-rule" />
+        <a href="#home" className="brand" aria-label="Avnish Yadav home">
+          <span className="brand-name">AVNISH</span><span className="brand-rule" />
           <span className="brand-sub">VIDEO EDITOR<br />& COLORIST</span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -76,9 +76,9 @@ export default function Home() {
           <span>INDEPENDENT VIDEO EDITOR</span>
           <span className="hero-status"><i /> AVAILABLE FOR PROJECTS</span>
         </div>
-        <div className="portfolio-wordmark" aria-hidden="true">PORTFOLIO</div>
+        <div className="portfolio-wordmark" aria-hidden="true">AVNISH</div>
         <div className="portfolio-portrait">
-          <img src="/portrait1.png" alt="Portrait representing the video editor" />
+          <img src="/portrait1.png" alt="Portrait of Avnish Yadav" />
         </div>
         <div className="portfolio-hero-copy">
           <p className="eyebrow">VIDEO EDITOR &amp; COLORIST</p>
@@ -196,9 +196,9 @@ export default function Home() {
       </section>
 
       <footer className="site-footer">
-        <a href="#home" className="brand footer-brand"><span className="brand-name">FRAME</span><span className="brand-rule"/><span className="brand-sub">VIDEO EDITOR<br/>& COLORIST</span></a>
+        <a href="#home" className="brand footer-brand"><span className="brand-name">AVNISH</span><span className="brand-rule"/><span className="brand-sub">VIDEO EDITOR<br/>& COLORIST</span></a>
         <nav className="footer-nav"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
-        <span className="copyright">© {new Date().getFullYear()} FRAME STUDIO. REPLACE WITH YOUR NAME.</span>
+        <span className="copyright">© {new Date().getFullYear()} AVNISH YADAV. ALL RIGHTS RESERVED.</span>
       </footer>
 
       <AnimatePresence>

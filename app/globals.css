@@ -1266,3 +1266,33 @@ a.contact-detail:hover { color: var(--ink); }
     bottom: 98px !important;
   }
 }
+
+
+/* Fine-tune desktop hero sizing for 100% browser zoom; leave header and mobile untouched */
+@media (min-width: 1101px) {
+  .portfolio-hero {
+    min-height: 680px !important;
+    height: min(820px, calc(100svh - 110px)) !important;
+  }
+  .portfolio-wordmark {
+    top: 30% !important;
+    font-size: clamp(140px, 17vw, 245px) !important;
+  }
+  .portfolio-portrait {
+    top: 2% !important;
+    height: 81% !important;
+    width: min(34vw, 475px) !important;
+  }
+  .portfolio-hero-copy {
+    bottom: clamp(120px, 16vh, 150px) !important;
+    width: min(400px, 32vw) !important;
+  }
+  .portfolio-hero-copy h1 {
+    font-size: clamp(40px, 3.8vw, 56px) !important;
+  }
+  .portfolio-hero-copy > p:not(.eyebrow) {
+    max-width: 280px !important;
+    margin: 14px 0 18px !important;
+    font-size: 12px !important;
+  }
+}

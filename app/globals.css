@@ -1120,3 +1120,20 @@ a.contact-detail:hover { color: var(--ink); }
 .contact-socials a svg {
   flex: 0 0 auto;
 }
+
+
+/* Keep the entire video frame visible, especially in desktop fullscreen */
+.video-project-player video {
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+.video-project-player video:fullscreen,
+.video-project-player video:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  background: #000 !important;
+}

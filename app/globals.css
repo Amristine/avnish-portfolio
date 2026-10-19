@@ -1258,12 +1258,12 @@ a.contact-detail:hover { color: var(--ink); }
 /* Nudge the hero copy upward on mobile */
 @media (max-width: 760px) {
   .portfolio-hero-copy {
-    bottom: 100px !important;
+    bottom: 135px !important;
   }
 }
 @media (max-width: 390px) {
   .portfolio-hero-copy {
-    bottom: 98px !important;
+    bottom: 133px !important;
   }
 }
 

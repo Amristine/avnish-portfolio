@@ -1019,3 +1019,9 @@ a.contact-detail:hover { color: var(--ink); }
     color: #171815 !important;
   }
 }
+
+
+/* Give the AVNISH wordmark more breathing room */
+.brand-name {
+  letter-spacing: 0.24em !important;
+}

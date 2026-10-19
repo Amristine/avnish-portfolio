@@ -127,7 +127,6 @@ export default function Home() {
           <p className="body-copy">From the first rough cut to the final grade, I work closely with creators and brands to turn ideas into thoughtful, cinematic stories.</p>
           <a className="text-link" href="#contact">Let&apos;s get to know each other <ArrowRight size={14}/></a>
           <div className="about-stats"><div><strong>100<span>+</span></strong><small>Projects</small></div><div><strong>5<span>+</span></strong><small>Years experience</small></div><div><strong>Worldwide</strong><small>Working remotely</small></div></div>
-          <p className="fineprint">Replace these sample stats with verified personal details.</p>
         </div>
       </section>
 

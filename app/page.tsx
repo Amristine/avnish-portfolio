@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Aperture, Check, Clapperboard, UsersRound,
@@ -11,11 +11,11 @@ import {
 const projects = [
   {
     number: "01", title: "Video Project 01", category: "Video", services: "Editing · Color Grading",
-    video: "/videoav.mp4"
+    video: "/videoav.mp4", previewAt: 4
   },
   {
     number: "02", title: "Video Project 02", category: "Video", services: "Editing · Color Grading",
-    video: "/videoav1.mp4"
+    video: "/videoav1.mp4", previewAt: 9
   },
 ];
 
@@ -23,6 +23,76 @@ const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
+
+function VideoPreview({ src, previewAt, title }: { src: string; previewAt: number; title: string }) {
+  const [poster, setPoster] = useState<string>();
+
+  useEffect(() => {
+    let active = true;
+    const frameVideo = document.createElement("video");
+    frameVideo.preload = "auto";
+    frameVideo.muted = true;
+    frameVideo.playsInline = true;
+
+    const cleanup = () => {
+      frameVideo.removeEventListener("loadedmetadata", seekToPreview);
+      frameVideo.removeEventListener("seeked", captureFrame);
+      frameVideo.removeEventListener("error", cleanup);
+      frameVideo.removeAttribute("src");
+      frameVideo.load();
+    };
+
+    const captureFrame = () => {
+      if (!frameVideo.videoWidth || !frameVideo.videoHeight) {
+        cleanup();
+        return;
+      }
+
+      const maxWidth = 540;
+      const scale = Math.min(1, maxWidth / frameVideo.videoWidth);
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.round(frameVideo.videoWidth * scale);
+      canvas.height = Math.round(frameVideo.videoHeight * scale);
+      const context = canvas.getContext("2d");
+
+      if (context) {
+        try {
+          context.drawImage(frameVideo, 0, 0, canvas.width, canvas.height);
+          const frame = canvas.toDataURL("image/jpeg", 0.86);
+          if (active) setPoster(frame);
+        } catch {
+          // Keep the normal video controls usable if frame capture is unavailable.
+        }
+      }
+      cleanup();
+    };
+
+    const seekToPreview = () => {
+      const duration = frameVideo.duration;
+      const target = Number.isFinite(duration) && duration > 0
+        ? Math.min(previewAt, Math.max(0, duration - 0.05))
+        : previewAt;
+      frameVideo.currentTime = target;
+    };
+
+    frameVideo.addEventListener("loadedmetadata", seekToPreview);
+    frameVideo.addEventListener("seeked", captureFrame);
+    frameVideo.addEventListener("error", cleanup);
+    frameVideo.src = src;
+    frameVideo.load();
+
+    return () => {
+      active = false;
+      cleanup();
+    };
+  }, [src, previewAt]);
+
+  return (
+    <video controls playsInline preload="metadata" poster={poster} src={src} aria-label={title}>
+      Your browser does not support video playback.
+    </video>
+  );
+}
 
 export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -84,9 +154,7 @@ export default function Home() {
               {projects.map((project) => (
                 <article className="project-card video-project-card" key={project.number}>
                   <span className="project-image-wrap video-project-player">
-                    <video controls playsInline preload="metadata" src={project.video} aria-label={project.title}>
-                      Your browser does not support video playback.
-                    </video>
+                    <VideoPreview src={project.video} previewAt={project.previewAt} title={project.title} />
                   </span>
                   <span className="project-meta"><span className="project-name">{project.title}</span><span className="project-number">{project.number}</span></span>
                   <span className="project-type">{project.category} <span>·</span> {project.services}</span>

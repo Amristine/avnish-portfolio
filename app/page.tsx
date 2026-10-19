@@ -78,7 +78,7 @@ export default function Home() {
         </div>
         <div className="portfolio-wordmark" aria-hidden="true">PORTFOLIO</div>
         <div className="portfolio-portrait">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1100&q=90" alt="Portrait representing the video editor" />
+          <img src="/IMG_6504%20(3).png" alt="Portrait representing the video editor" />
         </div>
         <div className="portfolio-hero-copy">
           <p className="eyebrow">VIDEO EDITOR &amp; COLORIST</p>

@@ -170,9 +170,9 @@ export default function Home() {
         </motion.div>
         <motion.div
           className="portfolio-portrait"
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.985 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 1.45, ease: [0.22, 1, 0.36, 1] }}
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.9, delay: 1.45, ease: "easeOut" }}
         >
           <img src="/portrait3.png" alt="Portrait of Avnish Yadav" />
         </motion.div>

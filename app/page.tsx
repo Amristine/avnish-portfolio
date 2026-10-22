@@ -126,18 +126,44 @@ export default function Home() {
       <section className="hero dark portfolio-hero" id="home">
         <div className="portfolio-hero-top">
         </div>
-        <div className="portfolio-wordmark" aria-hidden="true">AVNISH</div>
-        <div className="portfolio-portrait">
+        <motion.div
+          className="portfolio-wordmark"
+          aria-hidden="true"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.1, ease: "easeOut" }}
+        >AVNISH</motion.div>
+        <motion.div
+          className="portfolio-portrait"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.15, delay: 0.2, ease: "easeOut" }}
+        >
           <img src="/portrait3.png" alt="Portrait of Avnish Yadav" />
-        </div>
-        <div className="portfolio-hero-copy">
+        </motion.div>
+        <motion.div
+          className="portfolio-hero-copy"
+          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        >
           <p className="eyebrow">VIDEO EDITOR &amp; COLORIST</p>
           <h1>Stories shaped<br />through <em>motion.</em></h1>
           <p>I turn raw footage into clear, cinematic stories with thoughtful editing and color.</p>
           <a className="btn btn-paper" href="#work">Explore selected work <ArrowRight size={14}/></a>
-        </div>
-        <div className="portfolio-hero-side">EDITING / COLOR / STORY</div>
-        <div className="portfolio-hero-bottom"><span>BASED IN INDIA · AVAILABLE WORLDWIDE</span><a href="#work">SCROLL TO EXPLORE <ArrowDownRight size={13}/></a></div>
+        </motion.div>
+        <motion.div
+          className="portfolio-hero-side"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.65 }}
+        >EDITING / COLOR / STORY</motion.div>
+        <motion.div
+          className="portfolio-hero-bottom"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+        ><span>BASED IN INDIA · AVAILABLE WORLDWIDE</span><a href="#work">SCROLL TO EXPLORE <ArrowDownRight size={13}/></a></motion.div>
       </section>
 
       <section className="work-section section-pad" id="work">

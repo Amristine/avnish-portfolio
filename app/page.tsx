@@ -24,6 +24,11 @@ const fadeUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
 
+const wordReveal: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } },
+};
+
 function VideoPreview({ src, previewAt, title }: { src: string; previewAt: number; title: string }) {
   const [poster, setPoster] = useState<string>();
 
@@ -134,23 +139,42 @@ export default function Home() {
           transition={{ duration: 1.1, ease: "easeOut" }}
         >AVNISH</motion.div>
         <motion.div
-          className="portfolio-portrait"
-          initial={reduceMotion ? false : { opacity: 0 }}
+          className="portfolio-hero-copy"
+          initial={reduceMotion ? false : { opacity: 1 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.15, delay: 0.2, ease: "easeOut" }}
         >
-          <img src="/portrait3.png" alt="Portrait of Avnish Yadav" />
+          <motion.p
+            className="eyebrow"
+            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, delay: 0.1 }}
+          >VIDEO EDITOR &amp; COLORIST</motion.p>
+          <h1>
+            <motion.span className="hero-word" variants={wordReveal} initial={reduceMotion ? false : "hidden"} animate="visible" transition={{ delay: 0.2 }}>Stories</motion.span>{" "}
+            <motion.span className="hero-word" variants={wordReveal} initial={reduceMotion ? false : "hidden"} animate="visible" transition={{ delay: 0.34 }}>shaped</motion.span><br />
+            <motion.span className="hero-word" variants={wordReveal} initial={reduceMotion ? false : "hidden"} animate="visible" transition={{ delay: 0.48 }}>through</motion.span>{" "}
+            <em><motion.span className="hero-word" variants={wordReveal} initial={reduceMotion ? false : "hidden"} animate="visible" transition={{ delay: 0.62 }}>motion.</motion.span></em>
+          </h1>
+          <motion.p
+            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.82 }}
+          >I turn raw footage into clear, cinematic stories with thoughtful editing and color.</motion.p>
+          <motion.a
+            className="btn btn-paper"
+            href="#work"
+            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 1.05 }}
+          >Explore selected work <ArrowRight size={14}/></motion.a>
         </motion.div>
         <motion.div
-          className="portfolio-hero-copy"
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="portfolio-portrait"
+          initial={reduceMotion ? false : { opacity: 0, scale: 0.985 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 1.45, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow">VIDEO EDITOR &amp; COLORIST</p>
-          <h1>Stories shaped<br />through <em>motion.</em></h1>
-          <p>I turn raw footage into clear, cinematic stories with thoughtful editing and color.</p>
-          <a className="btn btn-paper" href="#work">Explore selected work <ArrowRight size={14}/></a>
+          <img src="/portrait3.png" alt="Portrait of Avnish Yadav" />
         </motion.div>
         <motion.div
           className="portfolio-hero-side"

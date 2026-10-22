@@ -1297,3 +1297,9 @@ a.contact-detail:hover { color: var(--ink); }
   }
 }
 
+
+
+/* Allow individual hero words to rise smoothly during the intro sequence */
+.portfolio-hero-copy .hero-word {
+  display: inline-block;
+}

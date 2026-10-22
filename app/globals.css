@@ -1308,6 +1308,6 @@ a.contact-detail:hover { color: var(--ink); }
 /* Use a clean geometric sans for the selected-work section heading */
 .work-layout > .section-intro .section-title {
   font-family: var(--sans) !important;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.045em;
 }

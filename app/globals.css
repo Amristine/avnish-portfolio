@@ -1303,3 +1303,11 @@ a.contact-detail:hover { color: var(--ink); }
 .portfolio-hero-copy .hero-word {
   display: inline-block;
 }
+
+
+/* Use a clean geometric sans for the selected-work section heading */
+.work-layout > .section-intro .section-title {
+  font-family: var(--sans) !important;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
